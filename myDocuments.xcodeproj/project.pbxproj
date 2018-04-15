@@ -8,20 +8,56 @@
 
 /* Begin PBXBuildFile section */
 		29A06A4C20816333007C48F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A06A4B20816333007C48F7 /* AppDelegate.swift */; };
-		29A06A4E20816333007C48F7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A06A4D20816333007C48F7 /* ViewController.swift */; };
 		29A06A5120816333007C48F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29A06A4F20816333007C48F7 /* Main.storyboard */; };
 		29A06A5320816334007C48F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29A06A5220816334007C48F7 /* Assets.xcassets */; };
 		29A06A5620816334007C48F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29A06A5420816334007C48F7 /* LaunchScreen.storyboard */; };
+		29A06A6120823E79007C48F7 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A06A6020823E79007C48F7 /* Service.swift */; };
+		29A06A6320823F31007C48F7 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A06A6220823F31007C48F7 /* Document.swift */; };
+		29A06A652082446F007C48F7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A06A642082446F007C48F7 /* Constants.swift */; };
+		29A06A67208244E6007C48F7 /* RestEndpoints.plist in Resources */ = {isa = PBXBuildFile; fileRef = 29A06A66208244E6007C48F7 /* RestEndpoints.plist */; };
+		29A06A6D20824AF1007C48F7 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 29A06A69208249B1007C48F7 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		29A06A722082AA64007C48F7 /* ListCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A06A712082AA63007C48F7 /* ListCellTableViewCell.swift */; };
+		29A06A742082AAA9007C48F7 /* DocumentListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A06A732082AAA9007C48F7 /* DocumentListTableViewController.swift */; };
+		29A06A782082AB6A007C48F7 /* ApplicationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A06A772082AB6A007C48F7 /* ApplicationManager.swift */; };
+		29A06A7F2082C2F3007C48F7 /* DocumentDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A06A7E2082C2F3007C48F7 /* DocumentDetailTableViewController.swift */; };
+		29A06A812082C30A007C48F7 /* FilterDocumentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A06A802082C30A007C48F7 /* FilterDocumentTableViewController.swift */; };
+		29A06A852082DFC0007C48F7 /* AddDocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A06A842082DFC0007C48F7 /* AddDocumentViewController.swift */; };
+		29A06A872082ECAE007C48F7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A06A862082ECAE007C48F7 /* User.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		29A06A6E20824AF1007C48F7 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				29A06A6D20824AF1007C48F7 /* Alamofire.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		29A06A4820816332007C48F7 /* myDocuments.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myDocuments.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29A06A4B20816333007C48F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		29A06A4D20816333007C48F7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		29A06A5020816333007C48F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		29A06A5220816334007C48F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		29A06A5520816334007C48F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		29A06A5720816334007C48F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		29A06A6020823E79007C48F7 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		29A06A6220823F31007C48F7 /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
+		29A06A642082446F007C48F7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		29A06A66208244E6007C48F7 /* RestEndpoints.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = RestEndpoints.plist; sourceTree = "<group>"; };
+		29A06A69208249B1007C48F7 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = myDocuments/Alamofire.framework; sourceTree = SOURCE_ROOT; };
+		29A06A712082AA63007C48F7 /* ListCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCellTableViewCell.swift; sourceTree = "<group>"; };
+		29A06A732082AAA9007C48F7 /* DocumentListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentListTableViewController.swift; sourceTree = "<group>"; };
+		29A06A772082AB6A007C48F7 /* ApplicationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationManager.swift; sourceTree = "<group>"; };
+		29A06A7E2082C2F3007C48F7 /* DocumentDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentDetailTableViewController.swift; sourceTree = "<group>"; };
+		29A06A802082C30A007C48F7 /* FilterDocumentTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterDocumentTableViewController.swift; sourceTree = "<group>"; };
+		29A06A842082DFC0007C48F7 /* AddDocumentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDocumentViewController.swift; sourceTree = "<group>"; };
+		29A06A862082ECAE007C48F7 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,13 +91,72 @@
 			isa = PBXGroup;
 			children = (
 				29A06A4B20816333007C48F7 /* AppDelegate.swift */,
-				29A06A4D20816333007C48F7 /* ViewController.swift */,
-				29A06A4F20816333007C48F7 /* Main.storyboard */,
+				29A06A772082AB6A007C48F7 /* ApplicationManager.swift */,
 				29A06A5220816334007C48F7 /* Assets.xcassets */,
-				29A06A5420816334007C48F7 /* LaunchScreen.storyboard */,
+				29A06A792082C044007C48F7 /* CustomCells */,
+				29A06A7B2082C05F007C48F7 /* Entities */,
+				29A06A5D20823E52007C48F7 /* Frameworks */,
 				29A06A5720816334007C48F7 /* Info.plist */,
+				29A06A7A2082C053007C48F7 /* RestServices */,
+				29A06A7C2082C06A007C48F7 /* Storyboards */,
+				29A06A7D2082C098007C48F7 /* ViewControllers */,
 			);
 			path = myDocuments;
+			sourceTree = "<group>";
+		};
+		29A06A5D20823E52007C48F7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				29A06A69208249B1007C48F7 /* Alamofire.framework */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		29A06A792082C044007C48F7 /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				29A06A712082AA63007C48F7 /* ListCellTableViewCell.swift */,
+			);
+			path = CustomCells;
+			sourceTree = "<group>";
+		};
+		29A06A7A2082C053007C48F7 /* RestServices */ = {
+			isa = PBXGroup;
+			children = (
+				29A06A6020823E79007C48F7 /* Service.swift */,
+				29A06A642082446F007C48F7 /* Constants.swift */,
+				29A06A66208244E6007C48F7 /* RestEndpoints.plist */,
+			);
+			path = RestServices;
+			sourceTree = "<group>";
+		};
+		29A06A7B2082C05F007C48F7 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				29A06A6220823F31007C48F7 /* Document.swift */,
+				29A06A862082ECAE007C48F7 /* User.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		29A06A7C2082C06A007C48F7 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				29A06A4F20816333007C48F7 /* Main.storyboard */,
+				29A06A5420816334007C48F7 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		29A06A7D2082C098007C48F7 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				29A06A732082AAA9007C48F7 /* DocumentListTableViewController.swift */,
+				29A06A7E2082C2F3007C48F7 /* DocumentDetailTableViewController.swift */,
+				29A06A802082C30A007C48F7 /* FilterDocumentTableViewController.swift */,
+				29A06A842082DFC0007C48F7 /* AddDocumentViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,6 +169,7 @@
 				29A06A4420816332007C48F7 /* Sources */,
 				29A06A4520816332007C48F7 /* Frameworks */,
 				29A06A4620816332007C48F7 /* Resources */,
+				29A06A6E20824AF1007C48F7 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -125,6 +221,7 @@
 				29A06A5620816334007C48F7 /* LaunchScreen.storyboard in Resources */,
 				29A06A5320816334007C48F7 /* Assets.xcassets in Resources */,
 				29A06A5120816333007C48F7 /* Main.storyboard in Resources */,
+				29A06A67208244E6007C48F7 /* RestEndpoints.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,8 +232,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				29A06A4E20816333007C48F7 /* ViewController.swift in Sources */,
+				29A06A652082446F007C48F7 /* Constants.swift in Sources */,
+				29A06A812082C30A007C48F7 /* FilterDocumentTableViewController.swift in Sources */,
+				29A06A742082AAA9007C48F7 /* DocumentListTableViewController.swift in Sources */,
+				29A06A782082AB6A007C48F7 /* ApplicationManager.swift in Sources */,
+				29A06A7F2082C2F3007C48F7 /* DocumentDetailTableViewController.swift in Sources */,
+				29A06A722082AA64007C48F7 /* ListCellTableViewCell.swift in Sources */,
+				29A06A6320823F31007C48F7 /* Document.swift in Sources */,
 				29A06A4C20816333007C48F7 /* AppDelegate.swift in Sources */,
+				29A06A6120823E79007C48F7 /* Service.swift in Sources */,
+				29A06A852082DFC0007C48F7 /* AddDocumentViewController.swift in Sources */,
+				29A06A872082ECAE007C48F7 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +388,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YAZWA54K8Q;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/myDocuments",
+				);
 				INFOPLIST_FILE = myDocuments/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -300,6 +410,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YAZWA54K8Q;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/myDocuments",
+				);
 				INFOPLIST_FILE = myDocuments/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
