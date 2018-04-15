@@ -10,6 +10,9 @@ import UIKit
 
 class FilterDocumentTableViewController: UITableViewController {
 
+    @IBOutlet weak var nameTextfield: UITextField!
+    @IBOutlet weak var datePicker: UIDatePicker!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,17 +31,58 @@ class FilterDocumentTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 2
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        switch section {
+        case 0:
+            return 2
+        default:
+            return 1
+        }
     }
     
     @IBAction func cancel() {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.section {
+        case 0:
+            if tableView.cellForRow(at: indexPath)?.accessoryType == .checkmark {
+                tableView.cellForRow(at: indexPath)?.accessoryType = .none
+            } else {
+                tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
+            }
+            tableView.deselectRow(at: indexPath, animated: true)
+            
+        default:
+            break
+        }
+    }
+    
+    @IBAction func filter() {
+        let name = nameTextfield.text
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        
+        let date = formatter.string(from: datePicker.date)
+        let endDate = formatter.string(from: Date())
+        
+        Service.filterDocumentsBy(name: name, startDate: date, endDate: endDate) { error in
+            
+            if error != nil {
+                let alert = UIAlertController.init(title: "Erro", message: error?.localizedDescription, preferredStyle: .alert)
+                let action = UIAlertAction.init(title: "OK", style: .default, handler: nil)
+                alert.addAction(action)
+                self.present(alert, animated: true, completion: nil)
+                
+            } else {
+                 self.dismiss(animated: true, completion: nil)
+            }
+        }
     }
 
     /*

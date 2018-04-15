@@ -14,5 +14,4 @@ final class Constants {
         static let server = "server"
         static let documents = "documents"
     }
-    
 }

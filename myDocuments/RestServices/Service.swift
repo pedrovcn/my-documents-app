@@ -26,11 +26,55 @@ class Service: NSObject {
         Alamofire.request(getCompleteUrl(forKey: Constants.ServerKeys.documents)).responseJSON { response in
             
             if let json = response.result.value {
-                let array = json as! NSArray
+                let dictionary = json as! NSDictionary
+                let array = dictionary.value(forKey: "content") as! Array<NSDictionary>
+                
                 ApplicationManager.sharedInstance.documentsArray.removeAll()
                 
                 for dict in array {
-                    let document = Document(dictionary: dict as! NSDictionary)
+                    let document = Document(dictionary: dict)
+                    ApplicationManager.sharedInstance.documentsArray.append(document!)
+                }
+                
+                completion(nil)
+                
+            } else {
+                completion(NSError.init(domain: "Não foi possível buscar informações.", code: 1, userInfo: nil))
+            }
+        }
+    }
+    
+    class func filterDocumentsBy(name: String?, startDate: String?, endDate:String?, completion: @escaping(Error?) -> Void) {
+        var url = getCompleteUrl(forKey: Constants.ServerKeys.documents)
+        
+        if name != nil {
+            url.append("?name=")
+            url.append(name!)
+            
+        }
+        
+        if startDate != nil {
+            if name != nil {
+                url.append("&")
+            } else {
+                url.append("?")
+            }
+            url.append("startDate=")
+            url.append(startDate!)
+            url.append("&endDate=")
+            url.append(endDate!)
+        }
+        
+        Alamofire.request(url).responseJSON { response in
+            
+            if let json = response.result.value {
+                let dictionary = json as! NSDictionary
+                let array = dictionary.value(forKey: "content") as! Array<NSDictionary>
+                
+                ApplicationManager.sharedInstance.documentsArray.removeAll()
+                
+                for dict in array {
+                    let document = Document(dictionary: dict)
                     ApplicationManager.sharedInstance.documentsArray.append(document!)
                 }
                 
@@ -43,22 +87,21 @@ class Service: NSObject {
     }
     
     class func saveDocument(document: Document, completion: @escaping(Error?) -> Void) {
-        print(document.dictionaryRepresentation())
+//        print(document.dictionaryRepresentation())
         let url = getCompleteUrl(forKey: Constants.ServerKeys.documents)
         let params = document.dictionaryRepresentation() as? Parameters
+        
         Alamofire.request(url, method: .post, parameters: params, encoding: JSONEncoding.default, headers: nil).responseJSON { response in
-            
+
             switch(response.result) {
             case .success(_):
                 completion(nil)
-                
+
             case .failure(_):
                 completion(NSError.init(domain: "Erro ao salvar o documento.", code: 1, userInfo: nil))
-                
+
             }
-            
-            print(response)
-            
+
         }
     }
 }

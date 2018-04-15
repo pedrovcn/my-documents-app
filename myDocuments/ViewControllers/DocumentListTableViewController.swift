@@ -12,11 +12,12 @@ class DocumentListTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        refreshDocumentsList()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        refreshDocumentsList()
+        tableView.reloadData()
     }
 
     func refreshDocumentsList() {
@@ -45,7 +46,7 @@ class DocumentListTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ListCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "BasicCell", for: indexPath)
 
         cell.textLabel?.text = ApplicationManager.sharedInstance.documentsArray[indexPath.row].name
 
@@ -58,7 +59,7 @@ class DocumentListTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "DocumentDetail") {
             let navViewController = segue.destination as! UINavigationController
-            let viewController = navViewController.viewControllers[0] as! DocumentDetailTableViewController
+            let viewController = navViewController.viewControllers[0] as! DocumentDetailViewController
             viewController.document = ApplicationManager.sharedInstance.documentsArray[(tableView.indexPathForSelectedRow?.row)!]
         }
     }

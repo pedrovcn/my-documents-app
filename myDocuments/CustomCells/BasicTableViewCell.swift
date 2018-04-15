@@ -1,5 +1,5 @@
 //
-//  ListCellTableViewCell.swift
+//  BasicTableViewCell.swift
 //  myDocuments
 //
 //  Created by Pedro Nascimento on 14/04/2018.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ListCellTableViewCell: UITableViewCell {
+class BasicTableViewCell: UITableViewCell {
     
     @IBOutlet weak var documentNameLabel: UILabel!
     

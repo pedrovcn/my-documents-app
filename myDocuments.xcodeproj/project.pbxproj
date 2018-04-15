@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2943A86920838C6800BEEAD4 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2943A86820838C6700BEEAD4 /* UIImageExtension.swift */; };
+		2943A86B2083901600BEEAD4 /* ImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2943A86A2083901600BEEAD4 /* ImageTableViewCell.swift */; };
 		29A06A4C20816333007C48F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A06A4B20816333007C48F7 /* AppDelegate.swift */; };
 		29A06A5120816333007C48F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29A06A4F20816333007C48F7 /* Main.storyboard */; };
 		29A06A5320816334007C48F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29A06A5220816334007C48F7 /* Assets.xcassets */; };
@@ -16,13 +18,14 @@
 		29A06A652082446F007C48F7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A06A642082446F007C48F7 /* Constants.swift */; };
 		29A06A67208244E6007C48F7 /* RestEndpoints.plist in Resources */ = {isa = PBXBuildFile; fileRef = 29A06A66208244E6007C48F7 /* RestEndpoints.plist */; };
 		29A06A6D20824AF1007C48F7 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 29A06A69208249B1007C48F7 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		29A06A722082AA64007C48F7 /* ListCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A06A712082AA63007C48F7 /* ListCellTableViewCell.swift */; };
+		29A06A722082AA64007C48F7 /* BasicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A06A712082AA63007C48F7 /* BasicTableViewCell.swift */; };
 		29A06A742082AAA9007C48F7 /* DocumentListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A06A732082AAA9007C48F7 /* DocumentListTableViewController.swift */; };
 		29A06A782082AB6A007C48F7 /* ApplicationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A06A772082AB6A007C48F7 /* ApplicationManager.swift */; };
-		29A06A7F2082C2F3007C48F7 /* DocumentDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A06A7E2082C2F3007C48F7 /* DocumentDetailTableViewController.swift */; };
 		29A06A812082C30A007C48F7 /* FilterDocumentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A06A802082C30A007C48F7 /* FilterDocumentTableViewController.swift */; };
 		29A06A852082DFC0007C48F7 /* AddDocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A06A842082DFC0007C48F7 /* AddDocumentViewController.swift */; };
 		29A06A872082ECAE007C48F7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A06A862082ECAE007C48F7 /* User.swift */; };
+		29DFB3C420839B3E0013F1EE /* DocumentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DFB3C320839B3E0013F1EE /* DocumentDetailViewController.swift */; };
+		29F8B3C02083EB53000A974C /* FilterDocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F8B3BF2083EB53000A974C /* FilterDocumentViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -40,6 +43,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2943A86820838C6700BEEAD4 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
+		2943A86A2083901600BEEAD4 /* ImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTableViewCell.swift; sourceTree = "<group>"; };
 		29A06A4820816332007C48F7 /* myDocuments.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myDocuments.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29A06A4B20816333007C48F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		29A06A5020816333007C48F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -51,13 +56,14 @@
 		29A06A642082446F007C48F7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		29A06A66208244E6007C48F7 /* RestEndpoints.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = RestEndpoints.plist; sourceTree = "<group>"; };
 		29A06A69208249B1007C48F7 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = myDocuments/Alamofire.framework; sourceTree = SOURCE_ROOT; };
-		29A06A712082AA63007C48F7 /* ListCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCellTableViewCell.swift; sourceTree = "<group>"; };
+		29A06A712082AA63007C48F7 /* BasicTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicTableViewCell.swift; sourceTree = "<group>"; };
 		29A06A732082AAA9007C48F7 /* DocumentListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentListTableViewController.swift; sourceTree = "<group>"; };
 		29A06A772082AB6A007C48F7 /* ApplicationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationManager.swift; sourceTree = "<group>"; };
-		29A06A7E2082C2F3007C48F7 /* DocumentDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentDetailTableViewController.swift; sourceTree = "<group>"; };
 		29A06A802082C30A007C48F7 /* FilterDocumentTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterDocumentTableViewController.swift; sourceTree = "<group>"; };
 		29A06A842082DFC0007C48F7 /* AddDocumentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDocumentViewController.swift; sourceTree = "<group>"; };
 		29A06A862082ECAE007C48F7 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		29DFB3C320839B3E0013F1EE /* DocumentDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentDetailViewController.swift; sourceTree = "<group>"; };
+		29F8B3BF2083EB53000A974C /* FilterDocumentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterDocumentViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +106,7 @@
 				29A06A7A2082C053007C48F7 /* RestServices */,
 				29A06A7C2082C06A007C48F7 /* Storyboards */,
 				29A06A7D2082C098007C48F7 /* ViewControllers */,
+				2943A86820838C6700BEEAD4 /* UIImageExtension.swift */,
 			);
 			path = myDocuments;
 			sourceTree = "<group>";
@@ -115,7 +122,8 @@
 		29A06A792082C044007C48F7 /* CustomCells */ = {
 			isa = PBXGroup;
 			children = (
-				29A06A712082AA63007C48F7 /* ListCellTableViewCell.swift */,
+				29A06A712082AA63007C48F7 /* BasicTableViewCell.swift */,
+				2943A86A2083901600BEEAD4 /* ImageTableViewCell.swift */,
 			);
 			path = CustomCells;
 			sourceTree = "<group>";
@@ -152,9 +160,10 @@
 			isa = PBXGroup;
 			children = (
 				29A06A732082AAA9007C48F7 /* DocumentListTableViewController.swift */,
-				29A06A7E2082C2F3007C48F7 /* DocumentDetailTableViewController.swift */,
 				29A06A802082C30A007C48F7 /* FilterDocumentTableViewController.swift */,
 				29A06A842082DFC0007C48F7 /* AddDocumentViewController.swift */,
+				29DFB3C320839B3E0013F1EE /* DocumentDetailViewController.swift */,
+				29F8B3BF2083EB53000A974C /* FilterDocumentViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -236,11 +245,14 @@
 				29A06A812082C30A007C48F7 /* FilterDocumentTableViewController.swift in Sources */,
 				29A06A742082AAA9007C48F7 /* DocumentListTableViewController.swift in Sources */,
 				29A06A782082AB6A007C48F7 /* ApplicationManager.swift in Sources */,
-				29A06A7F2082C2F3007C48F7 /* DocumentDetailTableViewController.swift in Sources */,
-				29A06A722082AA64007C48F7 /* ListCellTableViewCell.swift in Sources */,
+				29A06A722082AA64007C48F7 /* BasicTableViewCell.swift in Sources */,
 				29A06A6320823F31007C48F7 /* Document.swift in Sources */,
+				2943A86920838C6800BEEAD4 /* UIImageExtension.swift in Sources */,
+				29DFB3C420839B3E0013F1EE /* DocumentDetailViewController.swift in Sources */,
+				2943A86B2083901600BEEAD4 /* ImageTableViewCell.swift in Sources */,
 				29A06A4C20816333007C48F7 /* AppDelegate.swift in Sources */,
 				29A06A6120823E79007C48F7 /* Service.swift in Sources */,
+				29F8B3C02083EB53000A974C /* FilterDocumentViewController.swift in Sources */,
 				29A06A852082DFC0007C48F7 /* AddDocumentViewController.swift in Sources */,
 				29A06A872082ECAE007C48F7 /* User.swift in Sources */,
 			);

@@ -11,6 +11,7 @@ import UIKit
 class AddDocumentViewController: UIViewController {
 
     @IBOutlet weak var nameDocumentTextfield: UITextField!
+    var documentImage: UIImage?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,8 +26,10 @@ class AddDocumentViewController: UIViewController {
     
     @IBAction func saveDocument() {
         let documentName = self.nameDocumentTextfield.text
-        
         let doc = Document.init(nameDocument: documentName!)
+                
+//        let byteArray = UIImage.encodeImageByteArray(image: documentImage!)
+//        doc?.imageByteArray = byteArray
     
         Service.saveDocument(document: doc!) { error in
             
@@ -51,8 +54,34 @@ class AddDocumentViewController: UIViewController {
 
     }
     
+    @IBAction func takePicture()
+    {
+        if UIImagePickerController.isSourceTypeAvailable(.camera){
+            let myPickerController = UIImagePickerController()
+            myPickerController.delegate = self;
+            myPickerController.sourceType = .camera
+            present(myPickerController, animated: true, completion: nil)
+        }
+        
+    }
+    
     @IBAction func cancel() {
         self.dismiss(animated: true, completion: nil)
     }
 
+}
+
+extension AddDocumentViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            documentImage = image
+        }else{
+            print("Something went wrong")
+        }
+        dismiss(animated: true, completion: nil)
+    }
 }
