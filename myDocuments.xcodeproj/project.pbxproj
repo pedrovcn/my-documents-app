@@ -21,7 +21,6 @@
 		29A06A722082AA64007C48F7 /* BasicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A06A712082AA63007C48F7 /* BasicTableViewCell.swift */; };
 		29A06A742082AAA9007C48F7 /* DocumentListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A06A732082AAA9007C48F7 /* DocumentListTableViewController.swift */; };
 		29A06A782082AB6A007C48F7 /* ApplicationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A06A772082AB6A007C48F7 /* ApplicationManager.swift */; };
-		29A06A812082C30A007C48F7 /* FilterDocumentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A06A802082C30A007C48F7 /* FilterDocumentTableViewController.swift */; };
 		29A06A852082DFC0007C48F7 /* AddDocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A06A842082DFC0007C48F7 /* AddDocumentViewController.swift */; };
 		29A06A872082ECAE007C48F7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A06A862082ECAE007C48F7 /* User.swift */; };
 		29DFB3C420839B3E0013F1EE /* DocumentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DFB3C320839B3E0013F1EE /* DocumentDetailViewController.swift */; };
@@ -59,7 +58,6 @@
 		29A06A712082AA63007C48F7 /* BasicTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicTableViewCell.swift; sourceTree = "<group>"; };
 		29A06A732082AAA9007C48F7 /* DocumentListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentListTableViewController.swift; sourceTree = "<group>"; };
 		29A06A772082AB6A007C48F7 /* ApplicationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationManager.swift; sourceTree = "<group>"; };
-		29A06A802082C30A007C48F7 /* FilterDocumentTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterDocumentTableViewController.swift; sourceTree = "<group>"; };
 		29A06A842082DFC0007C48F7 /* AddDocumentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDocumentViewController.swift; sourceTree = "<group>"; };
 		29A06A862082ECAE007C48F7 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		29DFB3C320839B3E0013F1EE /* DocumentDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentDetailViewController.swift; sourceTree = "<group>"; };
@@ -160,7 +158,6 @@
 			isa = PBXGroup;
 			children = (
 				29A06A732082AAA9007C48F7 /* DocumentListTableViewController.swift */,
-				29A06A802082C30A007C48F7 /* FilterDocumentTableViewController.swift */,
 				29A06A842082DFC0007C48F7 /* AddDocumentViewController.swift */,
 				29DFB3C320839B3E0013F1EE /* DocumentDetailViewController.swift */,
 				29F8B3BF2083EB53000A974C /* FilterDocumentViewController.swift */,
@@ -242,7 +239,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				29A06A652082446F007C48F7 /* Constants.swift in Sources */,
-				29A06A812082C30A007C48F7 /* FilterDocumentTableViewController.swift in Sources */,
 				29A06A742082AAA9007C48F7 /* DocumentListTableViewController.swift in Sources */,
 				29A06A782082AB6A007C48F7 /* ApplicationManager.swift in Sources */,
 				29A06A722082AA64007C48F7 /* BasicTableViewCell.swift in Sources */,

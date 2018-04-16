@@ -19,7 +19,6 @@ class FilterDocumentViewController: UIViewController, UIPickerViewDelegate, UIPi
         datePicker.isHidden = true
         filterTypePickerView.dataSource = self
         filterTypePickerView.delegate = self
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -95,16 +94,12 @@ class FilterDocumentViewController: UIViewController, UIPickerViewDelegate, UIPi
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         switch row {
         case 0:
-            print("selecionou nome")
             datePicker.isHidden = true
             nameTextfield.isHidden = false
-            // esconda o datepicker
         case 1:
-            print("selecionou data")
             datePicker.isHidden = false
             nameTextfield.isHidden = true
             nameTextfield.text = ""
-            //esconda e limpe o input
         default:
             break
         }

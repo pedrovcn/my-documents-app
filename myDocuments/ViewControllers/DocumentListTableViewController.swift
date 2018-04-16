@@ -33,9 +33,9 @@ class DocumentListTableViewController: UITableViewController {
                 self.present(alert, animated: true, completion: nil)
                 
             } else {
-                self.tableView.refreshControl?.endRefreshing()
                 self.tableView.reloadData()
             }
+            self.tableView.refreshControl?.endRefreshing()
         }
     }
     
