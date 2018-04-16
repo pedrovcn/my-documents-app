@@ -23,6 +23,10 @@
 		29A06A782082AB6A007C48F7 /* ApplicationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A06A772082AB6A007C48F7 /* ApplicationManager.swift */; };
 		29A06A852082DFC0007C48F7 /* AddDocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A06A842082DFC0007C48F7 /* AddDocumentViewController.swift */; };
 		29A06A872082ECAE007C48F7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A06A862082ECAE007C48F7 /* User.swift */; };
+		29DCE33820846A0400642FF6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DCE33720846A0400642FF6 /* LoginViewController.swift */; };
+		29DCE33A20846A1300642FF6 /* NewAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DCE33920846A1300642FF6 /* NewAccountViewController.swift */; };
+		29DCE33C208471BB00642FF6 /* UIAlertExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DCE33B208471BB00642FF6 /* UIAlertExtension.swift */; };
+		29DCE34320847A1F00642FF6 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DCE34220847A1F00642FF6 /* Utils.swift */; };
 		29DFB3C420839B3E0013F1EE /* DocumentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DFB3C320839B3E0013F1EE /* DocumentDetailViewController.swift */; };
 		29F8B3C02083EB53000A974C /* FilterDocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F8B3BF2083EB53000A974C /* FilterDocumentViewController.swift */; };
 /* End PBXBuildFile section */
@@ -60,6 +64,11 @@
 		29A06A772082AB6A007C48F7 /* ApplicationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationManager.swift; sourceTree = "<group>"; };
 		29A06A842082DFC0007C48F7 /* AddDocumentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDocumentViewController.swift; sourceTree = "<group>"; };
 		29A06A862082ECAE007C48F7 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		29DCE33720846A0400642FF6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		29DCE33920846A1300642FF6 /* NewAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAccountViewController.swift; sourceTree = "<group>"; };
+		29DCE33B208471BB00642FF6 /* UIAlertExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertExtension.swift; sourceTree = "<group>"; };
+		29DCE33D208478CD00642FF6 /* myDocuments-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "myDocuments-Bridging-Header.h"; sourceTree = "<group>"; };
+		29DCE34220847A1F00642FF6 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		29DFB3C320839B3E0013F1EE /* DocumentDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentDetailViewController.swift; sourceTree = "<group>"; };
 		29F8B3BF2083EB53000A974C /* FilterDocumentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterDocumentViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -104,7 +113,9 @@
 				29A06A7A2082C053007C48F7 /* RestServices */,
 				29A06A7C2082C06A007C48F7 /* Storyboards */,
 				29A06A7D2082C098007C48F7 /* ViewControllers */,
-				2943A86820838C6700BEEAD4 /* UIImageExtension.swift */,
+				29DCE344208496F800642FF6 /* Extensions */,
+				29DCE33D208478CD00642FF6 /* myDocuments-Bridging-Header.h */,
+				29DCE34220847A1F00642FF6 /* Utils.swift */,
 			);
 			path = myDocuments;
 			sourceTree = "<group>";
@@ -157,12 +168,39 @@
 		29A06A7D2082C098007C48F7 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				29DCE336208469ED00642FF6 /* Documents */,
+				29DCE3452084970600642FF6 /* Account */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		29DCE336208469ED00642FF6 /* Documents */ = {
+			isa = PBXGroup;
+			children = (
 				29A06A732082AAA9007C48F7 /* DocumentListTableViewController.swift */,
 				29A06A842082DFC0007C48F7 /* AddDocumentViewController.swift */,
 				29DFB3C320839B3E0013F1EE /* DocumentDetailViewController.swift */,
 				29F8B3BF2083EB53000A974C /* FilterDocumentViewController.swift */,
 			);
-			path = ViewControllers;
+			path = Documents;
+			sourceTree = "<group>";
+		};
+		29DCE344208496F800642FF6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2943A86820838C6700BEEAD4 /* UIImageExtension.swift */,
+				29DCE33B208471BB00642FF6 /* UIAlertExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		29DCE3452084970600642FF6 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				29DCE33720846A0400642FF6 /* LoginViewController.swift */,
+				29DCE33920846A1300642FF6 /* NewAccountViewController.swift */,
+			);
+			path = Account;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,6 +236,7 @@
 				TargetAttributes = {
 					29A06A4720816332007C48F7 = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 0930;
 					};
 				};
 			};
@@ -238,13 +277,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29DCE33820846A0400642FF6 /* LoginViewController.swift in Sources */,
 				29A06A652082446F007C48F7 /* Constants.swift in Sources */,
 				29A06A742082AAA9007C48F7 /* DocumentListTableViewController.swift in Sources */,
 				29A06A782082AB6A007C48F7 /* ApplicationManager.swift in Sources */,
+				29DCE33C208471BB00642FF6 /* UIAlertExtension.swift in Sources */,
 				29A06A722082AA64007C48F7 /* BasicTableViewCell.swift in Sources */,
 				29A06A6320823F31007C48F7 /* Document.swift in Sources */,
+				29DCE34320847A1F00642FF6 /* Utils.swift in Sources */,
 				2943A86920838C6800BEEAD4 /* UIImageExtension.swift in Sources */,
 				29DFB3C420839B3E0013F1EE /* DocumentDetailViewController.swift in Sources */,
+				29DCE33A20846A1300642FF6 /* NewAccountViewController.swift in Sources */,
 				2943A86B2083901600BEEAD4 /* ImageTableViewCell.swift in Sources */,
 				29A06A4C20816333007C48F7 /* AppDelegate.swift in Sources */,
 				29A06A6120823E79007C48F7 /* Service.swift in Sources */,
@@ -394,6 +437,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YAZWA54K8Q;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -407,6 +451,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.pedrovcn.myDocuments;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "myDocuments/myDocuments-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -416,6 +462,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YAZWA54K8Q;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -429,6 +476,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.pedrovcn.myDocuments;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "myDocuments/myDocuments-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -33,7 +33,7 @@ class DocumentDetailViewController: UIViewController {
     }
     
     @IBAction func share() {
-        let itemsToShare = [ document?.name ]
+        let itemsToShare = [ document?.name as Any ]
         let activityViewController = UIActivityViewController(activityItems: itemsToShare, applicationActivities: nil)
         activityViewController.popoverPresentationController?.sourceView = self.view
         

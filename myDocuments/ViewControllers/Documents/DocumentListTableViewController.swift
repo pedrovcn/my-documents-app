@@ -27,9 +27,7 @@ class DocumentListTableViewController: UITableViewController {
     @objc func refreshDocumentsList() {
         Service.getAllDocuments() { error in
             if error != nil {
-                let alert = UIAlertController.init(title: "Erro", message: error?.localizedDescription, preferredStyle: .alert)
-                let action = UIAlertAction.init(title: "OK", style: .default, handler: nil)
-                alert.addAction(action)
+                let alert = UIAlertController.simpleAlert(title: "Erro", message: (error?.localizedDescription)!)
                 self.present(alert, animated: true, completion: nil)
                 
             } else {

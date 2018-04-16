@@ -13,5 +13,7 @@ final class Constants {
     struct ServerKeys {
         static let server = "server"
         static let documents = "documents"
+        static let user = "user"
+        static let login = "login"
     }
 }

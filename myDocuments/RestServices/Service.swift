@@ -72,17 +72,49 @@ class Service: NSObject {
         let url = getCompleteUrl(forKey: Constants.ServerKeys.documents)
         let params = document.dictionaryRepresentation() as? Parameters
         
+        doPostRequest(url: url, params: params!) { error in
+            if error != nil {
+                completion(error)
+                
+            } else {
+                completion(nil)
+            }
+        }
+    }
+    
+    class func createUser(user: User, completion: @escaping(Error?) -> Void) {
+        let url = getCompleteUrl(forKey: Constants.ServerKeys.user)
+        let params = user.dictionaryRepresentation() as? Parameters
+        
+        doPostRequest(url: url, params: params!) { error in
+            if error != nil {
+                completion(error)
+                
+            } else {
+                completion(nil)
+            }
+        }
+    }
+    
+    class func loginUser(user: User, completion: @escaping(Error?) -> Void) {
+        let url = getCompleteUrl(forKey: Constants.ServerKeys.login)
+        let params = user.dictionaryRepresentation() as? Parameters
+        
         Alamofire.request(url, method: .post, parameters: params, encoding: JSONEncoding.default, headers: nil).responseJSON { response in
-
+                    
             switch(response.result) {
             case .success(_):
-                completion(nil)
-
+                if let json = response.result.value {
+                    let dictionary = json as! NSDictionary
+                    ApplicationManager.sharedInstance.user = User(dictionary: dictionary)
+                    completion(nil)
+                }
+                
             case .failure(_):
-                completion(NSError.init(domain: "Erro ao salvar o documento.", code: 1, userInfo: nil))
-
+                completion(NSError.init(domain: "Erro ao salvar informações.", code: 1, userInfo: nil))
+                
             }
-
+        
         }
     }
     
@@ -105,6 +137,21 @@ class Service: NSObject {
             } else {
                 completion(NSError.init(domain: "Não foi possível buscar informações.", code: 1, userInfo: nil))
             }
+        }
+    }
+    
+    private class func doPostRequest(url: String, params: Parameters, completion: @escaping(Error?) -> Void) {
+        Alamofire.request(url, method: .post, parameters: params, encoding: JSONEncoding.default, headers: nil).responseJSON { response in
+            
+            switch(response.result) {
+            case .success(_):
+                completion(nil)
+                
+            case .failure(_):
+                completion(NSError.init(domain: "Erro ao salvar informações.", code: 1, userInfo: nil))
+                
+            }
+            
         }
     }
 }

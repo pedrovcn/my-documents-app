@@ -16,6 +16,5 @@ class ApplicationManager {
 
     private init() {
         documentsArray = Array<Document>()
-        user = User()
     }
 }
