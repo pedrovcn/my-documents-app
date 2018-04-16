@@ -13,10 +13,12 @@ class FilterDocumentViewController: UIViewController, UIPickerViewDelegate, UIPi
     @IBOutlet weak var nameTextfield: UITextField!
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var filterTypePickerView: UIPickerView!
+    @IBOutlet weak var infoDateLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         datePicker.isHidden = true
+        infoDateLabel.isHidden = true
         filterTypePickerView.dataSource = self
         filterTypePickerView.delegate = self
     }
@@ -95,9 +97,11 @@ class FilterDocumentViewController: UIViewController, UIPickerViewDelegate, UIPi
         switch row {
         case 0:
             datePicker.isHidden = true
+            infoDateLabel.isHidden = true
             nameTextfield.isHidden = false
         case 1:
             datePicker.isHidden = false
+            infoDateLabel.isHidden = false
             nameTextfield.isHidden = true
             nameTextfield.text = ""
         default:

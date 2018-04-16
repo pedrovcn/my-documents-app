@@ -84,7 +84,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="7455" y="-1078"/>
+            <point key="canvasLocation" x="3657" y="-2125"/>
         </scene>
         <!--Document List Table View Controller-->
         <scene sceneID="By6-Bb-D1e">
@@ -141,7 +141,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zIU-dq-19x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3062" y="-196"/>
+            <point key="canvasLocation" x="1298" y="-196"/>
         </scene>
         <!--Filtro-->
         <scene sceneID="Cc1-m3-mZ0">
@@ -161,11 +161,17 @@
                                 <rect key="frame" x="20" y="94" width="335" height="216"/>
                             </pickerView>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Uh6-tG-mxo">
-                                <rect key="frame" x="20" y="330" width="335" height="216"/>
+                                <rect key="frame" x="20" y="359" width="335" height="216"/>
                                 <date key="date" timeIntervalSinceReferenceDate="545515704.46317899">
                                     <!--2018-04-15 20:08:24 +0000-->
                                 </date>
                             </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pesquisar documentos a partir de" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="obO-Ec-sNI">
+                                <rect key="frame" x="58" y="323" width="258" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -176,8 +182,10 @@
                             <constraint firstItem="ewg-67-WWM" firstAttribute="leading" secondItem="66W-Tf-18A" secondAttribute="leading" constant="10" id="g53-H3-tUd"/>
                             <constraint firstItem="66W-Tf-18A" firstAttribute="trailing" secondItem="ewg-67-WWM" secondAttribute="trailing" constant="10" id="ho3-Rl-gLp"/>
                             <constraint firstItem="ewg-67-WWM" firstAttribute="top" secondItem="fW5-M9-Qhe" secondAttribute="bottom" constant="17" id="jwc-2F-FD5"/>
+                            <constraint firstItem="obO-Ec-sNI" firstAttribute="centerX" secondItem="xqh-a6-ck1" secondAttribute="centerX" id="l4E-y3-oBf"/>
                             <constraint firstItem="Uh6-tG-mxo" firstAttribute="leading" secondItem="66W-Tf-18A" secondAttribute="leading" constant="20" id="otN-UO-3nq"/>
-                            <constraint firstItem="Uh6-tG-mxo" firstAttribute="top" secondItem="fW5-M9-Qhe" secondAttribute="bottom" constant="20" id="vYL-zd-h1s"/>
+                            <constraint firstItem="Uh6-tG-mxo" firstAttribute="top" secondItem="obO-Ec-sNI" secondAttribute="bottom" constant="15" id="vAZ-U6-Ehp"/>
+                            <constraint firstItem="obO-Ec-sNI" firstAttribute="top" secondItem="fW5-M9-Qhe" secondAttribute="bottom" constant="13" id="zMS-3R-6wF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="66W-Tf-18A"/>
                     </view>
@@ -196,12 +204,13 @@
                     <connections>
                         <outlet property="datePicker" destination="Uh6-tG-mxo" id="V9I-oL-bfR"/>
                         <outlet property="filterTypePickerView" destination="fW5-M9-Qhe" id="8IM-BW-Egc"/>
+                        <outlet property="infoDateLabel" destination="obO-Ec-sNI" id="cHz-lB-EDe"/>
                         <outlet property="nameTextfield" destination="ewg-67-WWM" id="XOa-1b-dvQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rSb-7k-chz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4038" y="1478"/>
+            <point key="canvasLocation" x="2274" y="1478"/>
         </scene>
         <!--Document Detail View Controller-->
         <scene sceneID="EOs-lX-HZD">
@@ -264,7 +273,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2P7-4E-Q8i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3062" y="1478"/>
+            <point key="canvasLocation" x="1298" y="1478"/>
         </scene>
         <!--Add Document View Controller-->
         <scene sceneID="avq-hQ-hTa">
@@ -316,7 +325,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cTi-y8-c6V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2073" y="1479"/>
+            <point key="canvasLocation" x="310" y="1479"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hNJ-cF-5a3">
@@ -338,7 +347,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aN8-eT-9Tt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3062" y="-1240"/>
+            <point key="canvasLocation" x="1298" y="-1239"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="KCW-fz-JV0">
@@ -356,7 +365,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dU6-WP-OYN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2072.8000000000002" y="662.51874062968523"/>
+            <point key="canvasLocation" x="310" y="663"/>
         </scene>
         <!--New Account View Controller-->
         <scene sceneID="CJy-k7-wTi">
@@ -445,7 +454,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="7455" y="818"/>
+            <point key="canvasLocation" x="6041" y="-196"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="EkX-ZF-KKo">
@@ -463,7 +472,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N9U-HH-P2z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7455" y="-160"/>
+            <point key="canvasLocation" x="6041" y="-1237"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9aP-Xk-Ykj">
@@ -481,7 +490,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vho-5m-u2E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3062" y="663"/>
+            <point key="canvasLocation" x="1298" y="663"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="KMN-GV-htU">
@@ -499,7 +508,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IG6-Qw-LPw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4038" y="663"/>
+            <point key="canvasLocation" x="2274" y="663"/>
         </scene>
     </scenes>
 </document>

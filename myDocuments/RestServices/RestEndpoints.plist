@@ -9,6 +9,6 @@
 	<key>documents</key>
 	<string>/documents</string>
 	<key>server</key>
-	<string>http://localhost:8080</string>
+	<string>http://192.168.15.11:8080</string>
 </dict>
 </plist>
