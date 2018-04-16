@@ -68,10 +68,12 @@ class FilterDocumentTableViewController: UITableViewController {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
         
-        let date = formatter.string(from: datePicker.date)
-        let endDate = formatter.string(from: Date())
+//        let date = formatter.string(from: datePicker.date)
+//        let endDate = formatter.string(from: Date())
+        let date:String? = nil
+        let endDate:String? = nil
         
-        Service.filterDocumentsBy(name: name, startDate: date, endDate: endDate) { error in
+        Service.filterDocumentsByName(name: name!) { error in
             
             if error != nil {
                 let alert = UIAlertController.init(title: "Erro", message: error?.localizedDescription, preferredStyle: .alert)

@@ -23,48 +23,70 @@ class Service: NSObject {
     }
     
     class func getAllDocuments(completion: @escaping(Error?) -> Void) {
-        Alamofire.request(getCompleteUrl(forKey: Constants.ServerKeys.documents)).responseJSON { response in
-            
-            if let json = response.result.value {
-                let dictionary = json as! NSDictionary
-                let array = dictionary.value(forKey: "content") as! Array<NSDictionary>
-                
-                ApplicationManager.sharedInstance.documentsArray.removeAll()
-                
-                for dict in array {
-                    let document = Document(dictionary: dict)
-                    ApplicationManager.sharedInstance.documentsArray.append(document!)
-                }
-                
-                completion(nil)
+        doGetRequest(url: getCompleteUrl(forKey: Constants.ServerKeys.documents)) { error in
+            if error != nil {
+                completion(error)
                 
             } else {
-                completion(NSError.init(domain: "Não foi possível buscar informações.", code: 1, userInfo: nil))
+                completion(nil)
             }
         }
     }
     
-    class func filterDocumentsBy(name: String?, startDate: String?, endDate:String?, completion: @escaping(Error?) -> Void) {
+    class func filterDocumentsByName(name: String, completion: @escaping(Error?) -> Void) {
         var url = getCompleteUrl(forKey: Constants.ServerKeys.documents)
         
-        if name != nil {
-            url.append("?name=")
-            url.append(name!)
-            
-        }
+        url.append("?name=")
+        url.append(name)
         
-        if startDate != nil {
-            if name != nil {
-                url.append("&")
+        doGetRequest(url: url) { error in
+            if error != nil {
+                completion(error)
+                
             } else {
-                url.append("?")
+                completion(nil)
             }
-            url.append("startDate=")
-            url.append(startDate!)
-            url.append("&endDate=")
-            url.append(endDate!)
+        }
+    }
+    
+    class func filterDocumentsByDate(startDate: String, endDate:String, completion: @escaping(Error?) -> Void) {
+        var url = getCompleteUrl(forKey: Constants.ServerKeys.documents)
+        
+        url.append("?startDate=")
+        url.append(startDate)
+        url.append("&endDate=")
+        url.append(endDate)
+        
+        doGetRequest(url: url) { error in
+            if error != nil {
+                completion(error)
+                
+            } else {
+                completion(nil)
+            }
         }
         
+    }
+    
+    class func saveDocument(document: Document, completion: @escaping(Error?) -> Void) {
+        let url = getCompleteUrl(forKey: Constants.ServerKeys.documents)
+        let params = document.dictionaryRepresentation() as? Parameters
+        
+        Alamofire.request(url, method: .post, parameters: params, encoding: JSONEncoding.default, headers: nil).responseJSON { response in
+
+            switch(response.result) {
+            case .success(_):
+                completion(nil)
+
+            case .failure(_):
+                completion(NSError.init(domain: "Erro ao salvar o documento.", code: 1, userInfo: nil))
+
+            }
+
+        }
+    }
+    
+    private class func doGetRequest(url: String, completion: @escaping(Error?) -> Void) {
         Alamofire.request(url).responseJSON { response in
             
             if let json = response.result.value {
@@ -83,25 +105,6 @@ class Service: NSObject {
             } else {
                 completion(NSError.init(domain: "Não foi possível buscar informações.", code: 1, userInfo: nil))
             }
-        }
-    }
-    
-    class func saveDocument(document: Document, completion: @escaping(Error?) -> Void) {
-//        print(document.dictionaryRepresentation())
-        let url = getCompleteUrl(forKey: Constants.ServerKeys.documents)
-        let params = document.dictionaryRepresentation() as? Parameters
-        
-        Alamofire.request(url, method: .post, parameters: params, encoding: JSONEncoding.default, headers: nil).responseJSON { response in
-
-            switch(response.result) {
-            case .success(_):
-                completion(nil)
-
-            case .failure(_):
-                completion(NSError.init(domain: "Erro ao salvar o documento.", code: 1, userInfo: nil))
-
-            }
-
         }
     }
 }

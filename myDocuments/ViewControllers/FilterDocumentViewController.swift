@@ -16,7 +16,9 @@ class FilterDocumentViewController: UIViewController, UIPickerViewDelegate, UIPi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        datePicker.isHidden = true
+        filterTypePickerView.dataSource = self
+        filterTypePickerView.delegate = self
         // Do any additional setup after loading the view.
     }
 
@@ -36,31 +38,52 @@ class FilterDocumentViewController: UIViewController, UIPickerViewDelegate, UIPi
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
         
-        let date = formatter.string(from: datePicker.date)
+        let startDate = formatter.string(from: datePicker.date)
         let endDate = formatter.string(from: Date())
         
-//        if filterTypePickerView.selectedRow(inComponent: 1) == 0 && name == nil {
-//            let alert = UIAlertController.init(title: "Erro", message: "Informe um nome", preferredStyle: .alert)
-//            let action = UIAlertAction.init(title: "OK", style: .default, handler: nil)
-//            alert.addAction(action)
-//            self.present(alert, animated: true, completion: nil)
-//        }
-        
-        Service.filterDocumentsBy(name: name, startDate: date, endDate: endDate) { error in
+        if filterTypePickerView.selectedRow(inComponent: 0) == 0 && (name?.isEmpty)! {
+            let alert = UIAlertController.init(title: "Erro", message: "Informe um nome", preferredStyle: .alert)
+            let action = UIAlertAction.init(title: "OK", style: .default, handler: nil)
+            alert.addAction(action)
+            self.present(alert, animated: true, completion: nil)
+            return
             
-            if error != nil {
-                let alert = UIAlertController.init(title: "Erro", message: error?.localizedDescription, preferredStyle: .alert)
-                let action = UIAlertAction.init(title: "OK", style: .default, handler: nil)
-                alert.addAction(action)
-                self.present(alert, animated: true, completion: nil)
+        } else if filterTypePickerView.selectedRow(inComponent: 0) == 0 {
+            Service.filterDocumentsByName(name: name!) { error in
                 
-            } else {
-                self.dismiss(animated: true, completion: nil)
+                if error != nil {
+                    let alert = UIAlertController.init(title: "Erro", message: error?.localizedDescription, preferredStyle: .alert)
+                    let action = UIAlertAction.init(title: "OK", style: .default, handler: nil)
+                    alert.addAction(action)
+                    self.present(alert, animated: true, completion: nil)
+                    
+                } else {
+                    self.dismiss(animated: true, completion: nil)
+                }
             }
+        } else if filterTypePickerView.selectedRow(inComponent: 0) == 1 {
+            Service.filterDocumentsByDate(startDate: startDate, endDate: endDate) { error in
+    
+                if error != nil {
+                    let alert = UIAlertController.init(title: "Erro", message: error?.localizedDescription, preferredStyle: .alert)
+                    let action = UIAlertAction.init(title: "OK", style: .default, handler: nil)
+                    alert.addAction(action)
+                    self.present(alert, animated: true, completion: nil)
+    
+                } else {
+                    self.dismiss(animated: true, completion: nil)
+                }
+            }
+        } else {
+            let alert = UIAlertController.init(title: "Erro", message: "Selecione um tipo de pesquisa.", preferredStyle: .alert)
+            let action = UIAlertAction.init(title: "OK", style: .default, handler: nil)
+            alert.addAction(action)
+            self.present(alert, animated: true, completion: nil)
         }
+
     }
     
-    // MARK: - Picker View Delegate
+    // MARK: - Picker View Delegate/Datasource
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -73,12 +96,29 @@ class FilterDocumentViewController: UIViewController, UIPickerViewDelegate, UIPi
         switch row {
         case 0:
             print("selecionou nome")
+            datePicker.isHidden = true
+            nameTextfield.isHidden = false
             // esconda o datepicker
         case 1:
             print("selecionou data")
+            datePicker.isHidden = false
+            nameTextfield.isHidden = true
+            nameTextfield.text = ""
             //esconda e limpe o input
         default:
             break
+        }
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        switch row {
+        case 0:
+            return "Nome"
+        case 1:
+            return "Data"
+        default:
+            return ""
+            
         }
     }
 

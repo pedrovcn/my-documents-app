@@ -13,6 +13,10 @@ class DocumentListTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         refreshDocumentsList()
+        
+        self.refreshControl = UIRefreshControl()
+        self.refreshControl?.tintColor = UIColor.lightGray
+        self.refreshControl?.addTarget(self, action: #selector(refreshDocumentsList), for: .valueChanged)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -20,7 +24,7 @@ class DocumentListTableViewController: UITableViewController {
         tableView.reloadData()
     }
 
-    func refreshDocumentsList() {
+    @objc func refreshDocumentsList() {
         Service.getAllDocuments() { error in
             if error != nil {
                 let alert = UIAlertController.init(title: "Erro", message: error?.localizedDescription, preferredStyle: .alert)
